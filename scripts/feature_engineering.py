@@ -76,6 +76,5 @@ def preprocess_data(df, data_to, filename):
     # Save the dataframe as a CSV file
     df.to_csv(os.path.join(data_to, filename), index=False)
 
-
 if __name__ == "__main__":
     main()
