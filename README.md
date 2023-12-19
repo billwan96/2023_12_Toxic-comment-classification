@@ -11,16 +11,15 @@ The dataset used in this project is sourced from Kaggle's Toxic Comment Classifi
 ## Methodology
 We explored various machine learning and natural language processing techniques to classify the comments. Our best model achieved a notable AUC-ROC score when generalized to unseen data, suggesting high accuracy in toxic comment classification.
 
-## Code
-The code in this repository is licensed under the MIT License. If re-using/re-mixing, please provide attribution and link to this webpage.
-
 ## Report
 The final report detailing our approach, methodology, and results is available in this repository.
 
 ## References
-: Fortuna, P., & Nunes, S. (2018). A survey on automatic detection of hate speech in text. ACM Computing Surveys (CSUR), 51(4), 1-30.
-: Kaggle. (2018). Toxic Comment Classification Challenge. Retrieved from https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge
-: Dixon, L., Li, J., Sorensen, J., Thain, N., & Vasserman, L. (2018). Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society (pp. 67-73).
+[1]Fortuna, P., & Nunes, S. (2018). A survey on automatic detection of hate speech in text. ACM Computing Surveys (CSUR), 51(4), 1-30.
+
+[2]Kaggle. (2018). Toxic Comment Classification Challenge. Retrieved from https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge
+
+[3]Dixon, L., Li, J., Sorensen, J., Thain, N., & Vasserman, L. (2018). Measuring and mitigating unintended bias in text classification. In Proceedings of the 2018 AAAI/ACM Conference on AI, Ethics, and Society (pp. 67-73).
 
 ## License
 The Toxic Comment Classification Challenge report contained herein are licensed under the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License. The software code is licensed under the MIT License. If re-using/re-mixing, please provide attribution and link to this webpage. See the license file for more information.
