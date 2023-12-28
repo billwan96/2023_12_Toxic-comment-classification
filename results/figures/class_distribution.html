@@ -13,14 +13,14 @@
     }
   </style>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.1"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-5bf220d7975c86554b5d1cc16d1777df"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Label", "type": "nominal"}, "tooltip": [{"field": "Label", "type": "nominal"}, {"field": "Count", "type": "quantitative"}], "x": {"field": "Label", "type": "nominal"}, "y": {"field": "Count", "type": "quantitative"}}, "height": 300, "title": "Counts Per Class", "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-5bf220d7975c86554b5d1cc16d1777df": [{"Label": "toxic", "Count": 15294}, {"Label": "severe_toxic", "Count": 1595}, {"Label": "obscene", "Count": 8449}, {"Label": "threat", "Count": 478}, {"Label": "insult", "Count": 7877}, {"Label": "identity_hate", "Count": 1405}, {"Label": "is_clean", "Count": 143346}]}};
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-5bf220d7975c86554b5d1cc16d1777df"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Label", "type": "nominal"}, "tooltip": [{"field": "Label", "type": "nominal"}, {"field": "Count", "type": "quantitative"}], "x": {"field": "Label", "type": "nominal"}, "y": {"field": "Count", "type": "quantitative"}}, "height": 300, "title": "Counts Per Class", "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-5bf220d7975c86554b5d1cc16d1777df": [{"Label": "toxic", "Count": 15294}, {"Label": "severe_toxic", "Count": 1595}, {"Label": "obscene", "Count": 8449}, {"Label": "threat", "Count": 478}, {"Label": "insult", "Count": 7877}, {"Label": "identity_hate", "Count": 1405}, {"Label": "is_clean", "Count": 143346}]}};
       var embedOpt = {"renderer": "svg", "mode": "vega-lite"};
 
       function showError(el, error){
