@@ -14,6 +14,42 @@ We explored various machine learning and natural language processing techniques 
 ## Report
 The final report detailing our approach, methodology, and results is available in this repository.
 
+## Usage
+Setup:
+1. Clone the GitHub repository for this project.
+2. Create an enviroment from our environment.yml file
+```
+conda env create -f environment.yml
+```
+
+Analysis:
+3. At project root, run the following command:
+```
+# download data and perform eda
+python scripts/eda.py --training-data data/raw/train.csv --plot-to results/figures/
+
+# preprocess the data and feature engineering
+python scripts/preprocessing_featsengineering.py --train-data data/raw/train.csv --test-data data/raw/test.csv --test-labels data/raw/test_labels.csv --data-to data/processed/ --plot-to results/figures
+ 
+# fitting the models
+python scripts/model_fitting.py --original-train data/processed/train.csv --pipeline-to results/models/ --result-to results/tables/
+
+# understand about feature importance of the model
+python scripts/feature_importance.py --original-train data/processed/train.csv --pipeline-to results/full_models/ --result-to results/figures/
+
+# evaluate models performance on test data
+python evaluate_models.py --test-data data/processed//test.csv --model-dir results/full_models/ --output-dir results/tables/
+```
+
+4. (Alternatively you can run all the scripts in one go)
+```
+# Run the whole analysis
+make all
+
+# Remove the analysis
+make clean
+```
+
 ## References
 [1]Fortuna, P., & Nunes, S. (2018). A survey on automatic detection of hate speech in text. ACM Computing Surveys (CSUR), 51(4), 1-30.
 
