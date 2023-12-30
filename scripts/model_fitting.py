@@ -42,9 +42,9 @@ def main(original_train, pipeline_to, result_to, seed):
     )
 
     # Define the classifiers
-    dtree = DecisionTreeClassifier(max_depth=50, random_state=seed)
-    lgbm = LGBMClassifier(n_estimators=100, random_state=seed)
-    nn = MLPClassifier(hidden_layer_sizes=(100,), max_iter=100, random_state=seed)
+    dtree = DecisionTreeClassifier(max_depth=100, random_state=seed, class_weight='balanced')
+    lgbm = LGBMClassifier(n_estimators=100, random_state=seed, class_weight='balanced')
+    nn = MLPClassifier(hidden_layer_sizes=(100,50), max_iter=100, random_state=seed)
 
     # Define the pipelines
     pipelines = {
