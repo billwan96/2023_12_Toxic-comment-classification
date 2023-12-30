@@ -31,12 +31,14 @@ def augment_data(df, aug1, aug2):
 @click.command()
 @click.option('--train-data', type=str, help="Path to train data")
 @click.option('--test-data', type=str, help="Path to test data")
+@click.option('--test-labels', type=str, help="Path to test labels")
 @click.option('--data-to', type=str, help="Path to directory where processed data will be written to")
 @click.option('--plot-to', type=str, help="Path to directory where processed plot will be written to")
 
-def main(train_data, test_data, data_to, plot_to):
+def main(train_data, test_data, test_labels, data_to, plot_to):
     train_df = pd.read_csv(train_data)
     test_df = pd.read_csv(test_data)
+    test_label_df = pd.read_csv(test_labels)
 
     # Separate data based on labels
     df_toxic = train_df.loc[train_df['toxic'] == 1]
@@ -73,11 +75,17 @@ def main(train_data, test_data, data_to, plot_to):
     train_df = train_df.assign(vader_sentiment=train_df["comment_text"].apply(lambda x: sid.polarity_scores(x)["compound"]))
     test_df = test_df.assign(vader_sentiment=test_df["comment_text"].apply(lambda x: sid.polarity_scores(x)["compound"]))
     train_df.drop(columns=['id'], inplace=True)
-    test_df.drop(columns=['id'], inplace=True)
+
+    #exclude the -1 in test label
+    for i in labels:
+        test_label_df = test_label_df.loc[test_label_df[i] >=0 ]
+    #join test label and test data, then drop id column
+    test_df_join = pd.merge(test_df,test_label_df, how='inner', on='id')
+    test_df_join= test_df_join.drop('id', axis = 'columns')
 
     # Save the processed data
     train_df.to_csv(os.path.join(data_to, "train.csv"), index=False)
-    test_df.to_csv(os.path.join(data_to, "test.csv"), index=False)
+    test_df_join.to_csv(os.path.join(data_to, "test.csv"), index=False)
 
     # Create and save the chart
     labels_per_comment = train_df[labels].sum(axis=1)
