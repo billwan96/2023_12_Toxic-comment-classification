@@ -12,7 +12,7 @@ The dataset used in this project is sourced from Kaggle's Toxic Comment Classifi
 We explored various machine learning and natural language processing techniques to classify the comments. Our best model achieved a notable AUC-ROC score when generalized to unseen data, suggesting high accuracy in toxic comment classification.
 
 ## Report
-The final report detailing our approach, methodology, and results is available in this repository.
+The final report detailing our approach, methodology, and results is available in [this repository] (https://github.com/billwan96/2023_12_Toxic-comment-classification/tree/main/report).
 
 ## References
 [1]Fortuna, P., & Nunes, S. (2018). A survey on automatic detection of hate speech in text. ACM Computing Surveys (CSUR), 51(4), 1-30.
